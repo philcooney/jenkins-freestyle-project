@@ -14,7 +14,7 @@ pipeline{
 
             }
           
-            stage('Make Files'){
+            stage('Make Files'){ //
 
                 steps{
 
@@ -22,7 +22,7 @@ pipeline{
 
                 }
 
-            stage('Archive Files'){
+            stage('Archive Files'){ //
 
                 steps{
 
