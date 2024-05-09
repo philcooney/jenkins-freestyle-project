@@ -18,7 +18,7 @@ pipeline{
 
                 steps{
 
-                    sh "touch 1.txt 2.txt 3.txt 4.txt 5.txt"
+                    sh "touch ~/jenkins-tutorial-test/1.txt 2.txt 3.txt 4.txt 5.txt"
 
                 }
             }
@@ -27,7 +27,7 @@ pipeline{
 
                 steps{
 
-                    sh "zip exercise1.zip *.txt"
+                    sh "zip ~/jenkins-tutorial-test/exercise1.zip *.txt"
 
                 }
 
