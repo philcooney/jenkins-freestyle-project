@@ -4,32 +4,38 @@ pipeline{
 
         stages{
 
-            stage('Make Folder'){
+            stage('Build'){
 
                 steps{
 
-                    sh "mkdir ~/jenkins-tutorial-test || true"
+                    sh 'echo "Building..."'
+		    sh 'ls -al'
 
                 }
 
             }
           
-            stage('Make Files'){ //
+            stage('Test'){ //
 
                 steps{
 
-                    sh "touch ~/jenkins-tutorial-test/1.txt 2.txt 3.txt 4.txt 5.txt"
+                    sh '"Testing..."'
+		    sh 'pwd'
+		    sh 'touch testfile.txt'
+		    sh 'ls -l'
 
                 }
             }
             
-	    stage('Archive Files'){ //
+	    stage('Deploy'){ //
 
                 steps{
 
-                    sh "zip ~/jenkins-tutorial-test/exercise1.zip *.txt"
-
-                }
+                    sh 'cat ./deploy.sh'
+		    sh 'echo "Deploying..."'
+		    sh 'mv testfile.txt /tmp'
+		    sh 'ls -l /tmp'
+              }
 
             }
 
